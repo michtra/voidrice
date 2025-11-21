@@ -3,11 +3,18 @@
 # This file runs when a DM logs you into a graphical session.
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
-xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
-setbg &			# set the background with the `setbg` script
-#xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
+# setbg &			# set the background with the `setbg` script
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &	# Uncomment to use Xresources colors/settings on startup
+mpd &			# music player daemon-you might prefer it as a service though
+remaps &		# run the remaps script, switching caps/esc and more; check it for more info
+dunst &			# dunst for notifications
+xset r rate 300 50 &	# Speed xrate up
+# unclutter &		# Remove mouse when idle
+clipit &		# clipboard manager
+feh --bg-fill --randomize ~/.local/share/wallpapers/*	# set bg
+~/.config/chadwm/scripts/bar.sh &
 
-autostart="mpd xcompmgr dunst unclutter pipewire remapd"
+autostart="mpd xcompmgr mpd dunst unclutter remapd"
 
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &

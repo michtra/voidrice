@@ -26,6 +26,10 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# zsh-autosuggestions settings
+bindkey '^ ' autosuggest-accept
+ZSH_AUTOSUGGEST_STRATEGY=(history)
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -78,5 +82,6 @@ bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
 
-# Load syntax highlighting; should be last.
+# Load syntax highlighting and autocomplete; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null

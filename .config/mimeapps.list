@@ -3,11 +3,15 @@
 # xdg-open will use these settings to determine how to open filetypes.
 # These .desktop entries can also be seen and changed in ~/.local/share/applications/
 
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=lo.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=lo.desktop;
+application/vnd.oasis.opendocument.text=lo.desktop
 text/x-shellscript=text.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 application/x-bittorrent=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
 text/plain=text.desktop;
+text/x-tex=text.desktop;
 application/postscript=pdf.desktop;
 application/pdf=pdf.desktop;
 image/png=img.desktop;
