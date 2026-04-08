@@ -85,3 +85,5 @@ bindkey -M visual '^[[P' vi-delete
 # Load syntax highlighting and autocomplete; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+
+export TERM=xterm-256color
